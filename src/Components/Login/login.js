@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './login.css';
 
-class login extends Component {
+class Login extends Component {
   render() {
     return (
       <div className="login-body">
@@ -24,10 +25,17 @@ class login extends Component {
             </div>
             <div className="login-form-name">
               Username<br />
-              <input type="text" />
+              <input
+                type="text"
+                onChange={tag => this.props.input(tag.target.value)}
+              />
             </div>
             <div className="login-form-button">
-              <button type="submit">Login </button>
+              <button
+                type="submit"
+                onClick={this.props.login}
+              >Login
+              </button>
             </div>
           </div>
         </div>
@@ -37,7 +45,12 @@ class login extends Component {
   }
 }
 
-login.defaultProps = {
-  name: '',
+Login.defaultProps = {
+  login: null,
+  input: null,
 };
-export default login;
+export default Login;
+Login.propTypes = {
+  login: PropTypes.func,
+  input: PropTypes.func,
+};
