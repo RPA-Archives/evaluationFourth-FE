@@ -6,18 +6,16 @@ import Question from '../Question/question';
 class Quiz extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      queNo: 1,
-    };
   }
   render() {
+    let qno = 1;
     return (
       <div className="quiz-body" >
         {this.props.quiz.map(question =>
           (<Question
             marked={this.props.responses[question.questionId]}
             question={question}
-            number={this.state.queNo++}
+            number={qno++}
             radioClick={(qid, option) => this.props.radioClick(qid, option)}
           />))}
       </div>

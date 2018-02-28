@@ -29,27 +29,27 @@ class quiz extends Component {
 }
 
 quiz.defaultProps = {
+  number: 0,
+  marked: '',
   question: {
-    questionId: 89,
-    question: 'What is the capital of Montenegro',
-    options: [
-      {
-        option: 'Podgorica',
-      },
-      {
-        option: 'Antananarivo',
-      },
-      {
-        option: 'Majuro',
-      },
-      {
-        option: 'Andorra la Vella',
-      },
-    ],
+    questionId: 0,
+    question: 'abc',
+    options: [{
+      option: 'abc',
+    }],
+    answer: 'abc',
   },
-
+  radioClick: null,
 };
 export default quiz;
 quiz.propTypes = {
-  question: PropTypes.object,
+  number: PropTypes.number,
+  marked: PropTypes.string,
+  question: PropTypes.shape({
+    options: PropTypes.array,
+    answer: PropTypes.string,
+    question: PropTypes.string,
+    questionId: PropTypes.number,
+  }),
+  radioClick: PropTypes.func,
 };

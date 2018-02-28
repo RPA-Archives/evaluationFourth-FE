@@ -68,7 +68,7 @@ class App extends Component {
       method: 'POST',
       body: JSON.stringify(payload),
     })
-      .then((response1) => {
+      .then(() => {
         console.log(this.state.response);
         const newresponse = this.state.response;
         newresponse[questionId] = option;
