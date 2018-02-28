@@ -4,9 +4,6 @@ import './question.css';
 import RadioButton from '../RadioButton/radioButton';
 
 class quiz extends Component {
-  getOptions = () => {
-
-  }
   render() {
     return (
       <div className="question-body" >

@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 2,
+      page: 0,
       username: '',
       userId: null,
       questions: [],
@@ -34,7 +34,6 @@ class App extends Component {
               questions: allQuestions,
               page: 1,
             });
-            console.log(this.state);
           });
       });
   }
@@ -44,7 +43,6 @@ class App extends Component {
     });
   }
   radioClick = (questionId, option) => {
-    console.log('hey', questionId, option);
     const uid = this.state.userId;
     const payload = {
       questionId,
@@ -69,8 +67,7 @@ class App extends Component {
           leaderboard: score,
           page: 2,
         });
-      })
-      .then(done => console.log(this.state));
+      });
   }
   render() {
     if (this.state.page === 0) {
@@ -105,6 +102,7 @@ class App extends Component {
         <Leaderboard
           score={this.state.leaderboard}
           username={this.state.username}
+          total={this.state.questions.length}
         />
       </div>
     );

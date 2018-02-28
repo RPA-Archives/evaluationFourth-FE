@@ -1,0 +1,25 @@
+.leader-fields{
+  padding: 30px;
+}
+.leader-score-title{
+  color: orange;
+  font-size: 20px;
+  font-weight: bold;
+}
+.leader-score{
+  font-weight: bold;
+  font-size: 25px;
+}
+.score{
+  font-size: 50px;
+  font-weight: 100;
+}
+.leader-leaderboard{
+  padding: 10px;
+}
+.leader-head{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 25px;
+}
