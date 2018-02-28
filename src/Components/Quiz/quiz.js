@@ -4,9 +4,6 @@ import './quiz.css';
 import Question from '../Question/question';
 
 class Quiz extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     let qno = 1;
     return (

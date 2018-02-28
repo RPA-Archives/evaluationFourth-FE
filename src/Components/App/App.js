@@ -69,12 +69,14 @@ class App extends Component {
       body: JSON.stringify(payload),
     })
       .then(() => {
-        console.log(this.state.response);
         const newresponse = this.state.response;
         newresponse[questionId] = option;
         this.setState({
           response: newresponse,
         });
+      })
+      .then(() => {
+        console.log(Object.keys(this.state.response).length);
       });
   }
   calculate = () => {
@@ -117,6 +119,7 @@ class App extends Component {
           />
           <div className="calculate-div">
             <button
+              disabled={Object.keys(this.state.response).length !== this.state.questions.length}
               className="calculate-button"
               onClick={() => this.calculate()}
             >Calculate
