@@ -32,7 +32,6 @@ class Login extends Component {
             </div>
             <div className="login-form-button">
               <button
-                type="submit"
                 onClick={this.props.login}
               >Login
               </button>

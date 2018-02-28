@@ -16,41 +16,43 @@ class App extends Component {
     };
   }
   onLogin = () => {
-    fetch('/login', {
-      method: 'POST',
-      body: JSON.stringify({
-        username: this.state.username,
-      }),
-    })
-      .then(response => response.json())
-      .then(data => this.setState({
-        userId: data.userId,
-      }))
-      .then(() => {
-        fetch('/fetch')
-          .then(que => que.json())
-          .then((allQuestions) => {
-            this.setState({
-              questions: allQuestions,
-              page: 1,
-            });
-          });
+    if (this.state.username !== '') {
+      fetch('/login', {
+        method: 'POST',
+        body: JSON.stringify({
+          username: this.state.username,
+        }),
       })
-      .then(() => {
-        fetch('/getuserresponse', {
-          method: 'POST',
-          body: JSON.stringify({
-            userId: this.state.userId,
-          }),
-        })
-          .then(que => que.json())
-          .then((allResponse) => {
-            this.setState({
-              response: allResponse,
-              page: 1,
+        .then(response => response.json())
+        .then(data => this.setState({
+          userId: data.userId,
+        }))
+        .then(() => {
+          fetch('/fetch')
+            .then(que => que.json())
+            .then((allQuestions) => {
+              this.setState({
+                questions: allQuestions,
+                page: 1,
+              });
             });
-          });
-      });
+        })
+        .then(() => {
+          fetch('/getuserresponse', {
+            method: 'POST',
+            body: JSON.stringify({
+              userId: this.state.userId,
+            }),
+          })
+            .then(que => que.json())
+            .then((allResponse) => {
+              this.setState({
+                response: allResponse,
+                page: 1,
+              });
+            });
+        });
+    }
   }
   username = (value) => {
     this.setState({
@@ -74,9 +76,6 @@ class App extends Component {
         this.setState({
           response: newresponse,
         });
-      })
-      .then(() => {
-        console.log(Object.keys(this.state.response).length);
       });
   }
   calculate = () => {

@@ -9,8 +9,6 @@ class RadioButton extends Component {
         <input
           type="radio"
           className="question-radio"
-          name={this.props.name}
-          value={this.props.option}
           onClick={() => this.props.radioClick(this.props.name, this.props.option)}
           checked={this.props.marked === this.props.option}
         /> {this.props.option}

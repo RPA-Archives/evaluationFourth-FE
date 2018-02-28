@@ -43,11 +43,12 @@
 
 }
 .login-welcome-message{
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
+  margin: 7px;
 }
 .login-welcome-quizzy{
-  font-size: 50px;
+  font-size: 55px;
   font-weight: bold;
   color: white;
 }
