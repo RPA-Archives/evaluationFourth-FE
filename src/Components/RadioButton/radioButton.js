@@ -19,6 +19,16 @@ class RadioButton extends Component {
 
 export default RadioButton;
 RadioButton.propTypes = {
-  quiz: PropTypes.array,
+  radioClick: PropTypes.func,
+  name: PropTypes.string,
+  option: PropTypes.Array,
+  marked: PropTypes.string,
+};
+
+RadioButton.defaultProps = {
+  radioClick: null,
+  name: '',
+  option: [],
+  marked: '',
 };
 

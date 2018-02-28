@@ -21,6 +21,8 @@ class Quiz extends Component {
 }
 
 Quiz.defaultProps = {
+  responses: '',
+  radioClick: null,
   quiz: [
     {
       questionId: 89,
@@ -243,5 +245,7 @@ Quiz.defaultProps = {
 };
 export default Quiz;
 Quiz.propTypes = {
+  responses: PropTypes.string,
+  radioClick: PropTypes.func,
   quiz: PropTypes.array,
 };

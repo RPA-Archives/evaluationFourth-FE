@@ -22,6 +22,21 @@ class Score extends Component {
 
 export default Score;
 Score.propTypes = {
+  user: PropTypes.string,
+  list: PropTypes.shape({
+    username: PropTypes.string,
+    score: PropTypes.number,
+  }),
+  count: PropTypes.number,
 
+};
+
+Score.defaultProps = {
+  user: '',
+  list: {
+    username: '',
+    score: 0,
+  },
+  count: 0,
 };
 

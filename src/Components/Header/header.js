@@ -20,7 +20,7 @@ class Header extends Component {
 Header.defaultProps = {
   name: '',
 };
-Header.PropTypes = {
+Header.propTypes = {
   name: PropTypes.string,
 };
 export default Header;

@@ -57,12 +57,18 @@ class Leaderboard extends Component {
 }
 
 export default Leaderboard;
-Leaderboard.propTypes = {
 
+Leaderboard.propTypes = {
+  username: PropTypes.string,
+  reset: PropTypes.func,
+  total: PropTypes.number,
+  score: PropTypes.array,
 };
 
 Leaderboard.defaultProps = {
   username: 'ram',
+  total: 0,
+  reset: null,
   score: [
     {
       username: 'Ram',
