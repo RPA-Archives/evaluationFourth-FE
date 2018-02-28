@@ -35,6 +35,21 @@ class App extends Component {
               page: 1,
             });
           });
+      })
+      .then(() => {
+        fetch('/getuserresponse', {
+          method: 'POST',
+          body: JSON.stringify({
+            userId: this.state.userId,
+          }),
+        })
+          .then(que => que.json())
+          .then((allResponse) => {
+            this.setState({
+              response: allResponse,
+              page: 1,
+            });
+          });
       });
   }
   username = (value) => {
@@ -53,7 +68,13 @@ class App extends Component {
       method: 'POST',
       body: JSON.stringify(payload),
     })
-      .then((response) => {
+      .then((response1) => {
+        console.log(this.state.response);
+        const newresponse = this.state.response;
+        newresponse[questionId] = option;
+        this.setState({
+          response: newresponse,
+        });
       });
   }
   calculate = () => {
@@ -69,6 +90,14 @@ class App extends Component {
         });
       });
   }
+  reset = () => {
+    this.setState({
+      username: '',
+      response: [],
+      page: 0,
+      userId: null,
+    });
+  }
   render() {
     if (this.state.page === 0) {
       return (
@@ -83,6 +112,7 @@ class App extends Component {
           <Header name={this.state.username} />
           <Quiz
             quiz={this.state.questions}
+            responses={this.state.response}
             radioClick={(qid, option) => this.radioClick(qid, option)}
           />
           <div className="calculate-div">
@@ -103,6 +133,7 @@ class App extends Component {
           score={this.state.leaderboard}
           username={this.state.username}
           total={this.state.questions.length}
+          reset={() => this.reset()}
         />
       </div>
     );

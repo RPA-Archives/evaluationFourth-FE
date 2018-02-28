@@ -23,3 +23,14 @@
   text-align: center;
   padding-top: 25px;
 }
+.playagain{
+  border: 2px solid black;
+  border-radius: 15px;
+  min-width: 10%;
+  max-width: 25%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin: 40px auto;
+}

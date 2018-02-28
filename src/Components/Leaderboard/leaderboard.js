@@ -43,6 +43,14 @@ class Leaderboard extends Component {
             />
           ))}
         </div>
+        <div>
+          <button
+            className="playagain"
+            onClick={this.props.reset}
+          >
+          Play Again
+          </button>
+        </div>
       </div>
     );
   }

@@ -15,6 +15,7 @@ class Quiz extends Component {
       <div className="quiz-body" >
         {this.props.quiz.map(question =>
           (<Question
+            marked={this.props.responses[question.questionId]}
             question={question}
             number={this.state.queNo++}
             radioClick={(qid, option) => this.props.radioClick(qid, option)}

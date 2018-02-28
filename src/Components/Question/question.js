@@ -5,6 +5,7 @@ import RadioButton from '../RadioButton/radioButton';
 
 class quiz extends Component {
   render() {
+    // console.log(this.props.marked);
     return (
       <div className="question-body" >
         <div className="question-number">
@@ -16,6 +17,7 @@ class quiz extends Component {
         <div className="question-options">
           {this.props.question.options.map(eachOption =>
             (<RadioButton
+              marked={this.props.marked}
               option={eachOption.option}
               name={this.props.question.questionId}
               radioClick={(qid, option) => this.props.radioClick(qid, option)}
