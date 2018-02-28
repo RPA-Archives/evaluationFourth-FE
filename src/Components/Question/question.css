@@ -1,0 +1,26 @@
+.question-body{
+  border: 2px solid black;
+}
+.question-body{
+  border: 2px solid black;
+  margin: 25px;
+}
+.question-number{
+  padding: 10px 15px;
+  color: black;
+  font-weight: bold;
+}
+.question-question{
+  background-color: rgb(60,191,243);
+  text-align: center;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 5px;
+  font-size: 14px;
+}
+.question-options{
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
